@@ -7,8 +7,6 @@ const baseLink = username => {
 	return `https://instagram.com/${username}`;
 };
 
-const bodyData = "";
-
 const points = {
 	id: `"id":"`,
 	fullname: `full_name":"`,
@@ -26,16 +24,15 @@ const points = {
 
 const splitData = (data, index) => {
 	if (index === points.id || index === points.fullname || index === points.username || index === points.bio || index === points.externalUrl || index === points.linkshimmed) {
-		// console.log(data.split(index)[1].split(`","`)[0]);
+
 		return data.split(index)[1].split(`","`)[0];
 	}
 
 	if (index === points.followers || index === points.following) {
-		// console.log(data.split(index)[1].split(`},"`)[0]);
+
 		return data.split(index)[1].split(`},"`)[0];
 	}
 
-	// console.log(data.split(index)[1].split(`},"`)[0])
 	return data.split(index)[1].split(`,"`)[0];
 };
 
@@ -45,16 +42,10 @@ specificField : (username, info) => {
 	return got(baseLink(username)).then(res => {
 		const data = res.body;
 
-		// console.log(data);
-		
 		const skip = points[info];
 		
-		// console.log(skip);
-
 		const user = splitData(data, skip);
-
-		// console.log(user);
-		
+	
 		return {data: unicode(user)};
 	}).catch(err => {
 		if (err && err.message === `Cannot read property \'split\' of undefined`) {
@@ -62,16 +53,6 @@ specificField : (username, info) => {
 		}
 		return {data: err.message};
 	});
-},
-
-
-// getAllDetails : (username,allInfo)=>{
-// 	return got(baseLink(username)).then(res=>{
-// 		const data = res.body;
-// 	}).catch(err =>{
-
-// 	})
-// }
-
+}
 
 }
