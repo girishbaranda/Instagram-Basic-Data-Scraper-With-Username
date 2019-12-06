@@ -1,11 +1,12 @@
 'use strict';
 
-const bud = require('./index.js');
+import test from 'ava';
+const specialFunc2 = require('.');
 
-const user = 'joietribianni';
+const user = 'glimps.xyz.app';
 
 const check = (usr, opt) => {
-	return bud.specificField(usr, opt).then(res => {
+	return specialFunc2.specificField(usr, opt).then(res => {
 		console.log(' ' + opt + ' : ' + res.data + ' \n ');
 	});
 };
@@ -22,3 +23,75 @@ check(user, 'following');
 check(user, 'private');
 check(user, 'verified');
 check(user, 'connected');
+
+test('userid', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'id');
+
+	t.is(specialFunc.data, '5502620115');
+});
+
+test('fullname', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'fullname');
+
+	t.is(specialFunc.data, 'GLIMPS.xyz | Seize the day');
+});
+
+test('username', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'username');
+
+	t.is(specialFunc.data, 'glimps.xyz.app');
+});
+
+test('bio', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'bio');
+
+	t.is(specialFunc.data, specialFunc.data);
+});
+
+test('externalUrl', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'externalUrl');
+
+	t.is(specialFunc.data, 'http://onelink.to/8m94d7');
+});
+
+test('linkshimmed', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'linkshimmed');
+
+	t.is(specialFunc.data, specialFunc.data);
+});
+
+test('posts', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'posts');
+
+	t.is(specialFunc.data, '86');
+});
+
+test('followers', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'followers');
+
+	t.is(specialFunc.data, specialFunc.data);
+});
+
+test('following', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'following');
+
+	t.is(specialFunc.data, '409');
+});
+
+test('private', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'private');
+
+	t.is(specialFunc.data, 'false');
+});
+
+test('verified', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'verified');
+
+	t.is(specialFunc.data, 'false');
+});
+
+test('connected', async t => {
+	const specialFunc = await specialFunc2.specificField(user, 'connected');
+
+	t.is(specialFunc.data, 'null');
+});
