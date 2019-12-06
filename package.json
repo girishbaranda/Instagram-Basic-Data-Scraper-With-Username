@@ -1,0 +1,39 @@
+{
+  "name": "instagram-basic-data-scraper-with-username",
+  "version": "1.0.0",
+  "description": "Basic Instagram Data Scraper from the username, Just to provide the developers the facility to access instagram data using username",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girishbaranda/Instagram-Basic-Data-Scraper-With-Username.git"
+  },
+  "keywords": [
+    "Scraper",
+    "Instagram",
+    "InstaDP",
+    "Instagram",
+    "Profile",
+    "Picture",
+    "Details",
+    "Followers",
+    "Following",
+    "verified",
+    "profile",
+    "fullprofile"
+  ],
+  "author": "Girish Baranda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/girishbaranda/Instagram-Basic-Data-Scraper-With-Username/issues"
+  },
+  "homepage": "https://github.com/girishbaranda/Instagram-Basic-Data-Scraper-With-Username#readme",
+  "dependencies": {
+    "ava": "^2.4.0",
+    "got": "^10.0.1",
+    "unicode": "^12.1.0",
+    "unicodechar-string": "^1.0.0"
+  }
+}
