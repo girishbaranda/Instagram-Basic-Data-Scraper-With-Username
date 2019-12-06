@@ -54,7 +54,7 @@ test('followers', async t => {
 test('following', async t => {
 	const specialFunc = await func1.specificField(user, 'following');
 
-	t.is(specialFunc.data, '409');
+	t.is(specialFunc.data, '410');
 });
 
 test('private', async t => {
