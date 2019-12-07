@@ -39,6 +39,16 @@ instaObj.specificField(user, 'id').then(res => {
 });
 ```
 
+__`OR`__
+
+```js
+instaObj.getId(user).then(res => {
+  const userId = res.data;
+  console.log(userId);
+  // => 1429637717
+});
+```
+
 ## Example
 
 __`Full Name`__
@@ -75,6 +85,39 @@ instaObj.specificField('username', 'options')
 | __`private`__      |  `boolean`    |
 | __`verified`__     |  `boolean`    |
 | __`connected`__    |  `object`     |
+
+
+
+
+## Table of other functions that you can use to directly get the data
+
+## Username is the common arguments of the all the functions 
+
+| __`Functions`__      | __`Usage`__  |
+|--------------------|---------------|
+| __`getId`__           | `ID of the username`      |
+| __`getFullname`__     | `Extract Fullname of the username`      |
+| __`getBio`__          | `Extract bio of the username`      |
+| __`getExternalUrl`__  | `Get External Url of the username`      |
+| __`getLinkShimmed`__  | `Get LinkShimmed of the username`      |
+| __`getPosts`__        |  `Get Number of Posts of the username`     |
+| __`getFollowers`__    |  `Get Number of Followers of the username`     |
+| __`getFollowing`__    |  `Get Number of Following of the username`     |
+| __`getPrivate`__      |  `True or False if the profile is private or public`    |
+| __`getVerified`__     |  `True or False if the profile is verified`    |
+| __`getConnected`__    |  `Get the user connection object`     |
+
+
+## Usage
+```js
+instaObj.getFullname(user).then(res => {
+  const userFullname = res.data;
+  console.log(userFullname);
+  // => Joie
+});
+```
+
+
 
 
 ## License
