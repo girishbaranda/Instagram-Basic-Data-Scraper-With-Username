@@ -36,6 +36,38 @@ const splitData = (data, index) => {
 
 module.exports = {
 
+	getAll: username => {
+		return got(baseLink(username)).then(res => {
+			const data = res.body;
+			let allData = {};
+
+			const userId = splitData(data, points.id);
+			const fullname = splitData(data, points.fullname);
+			const username = splitData(data, points.username);
+			const bio = splitData(data, points.bio);
+			const externalUrl = splitData(data, points.externalUrl);
+			const linkshimmed = splitData(data, points.linkshimmed);
+			const posts = splitData(data, points.posts);
+			const followers = splitData(data, points.followers);
+			const following = splitData(data, points.following);
+			const privates = splitData(data, points.private);
+			const verified = splitData(data, points.verified);
+			const connected = splitData(data, points.connected);
+
+			allData = {id: userId, fullname, username, bio, externalUrl,
+				linkshimmed, posts, followers, following,
+				private: privates, verified, connected};
+
+			return {data: unicode(allData)};
+		}).catch(error => {
+			if (error && error.message === 'Not able to fetch desired result') {
+				return {data: false};
+			}
+
+			return {data: error.message};
+		});
+	},
+
 	specificField: (username, info) => {
 		return got(baseLink(username)).then(res => {
 			const data = res.body;

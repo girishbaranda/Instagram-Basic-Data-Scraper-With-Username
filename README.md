@@ -118,6 +118,18 @@ instaObj.getFullname(user).then(res => {
 ```
 
 
+## Get all the basic data in the single object
+
+## Usage
+```js
+instaObj.getAll(user).then(res => {
+  const userBasicAll = res.data;
+  console.log(userBasicAll);
+  // => {'id':1429637717}
+});
+```
+
+
 
 
 ## License

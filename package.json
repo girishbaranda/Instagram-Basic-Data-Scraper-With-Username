@@ -1,10 +1,10 @@
 {
   "name": "instagram-basic-data-scraper-with-username",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Basic Instagram Data Scraper from the username, Just to provide the developers the facility to access instagram data using username",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo --fix && ava"
   },
   "repository": {
     "type": "git",

@@ -11,6 +11,12 @@ const check = (usr, opt) => {
 	});
 };
 
+const getall = usr => {
+	return specialFunc2.getAll(usr).then(res => {
+		console.log('all Data : ' + JSON.stringify(res.data) + '\n');
+	});
+};
+
 check(user, 'id');
 check(user, 'fullname');
 check(user, 'username');
@@ -23,6 +29,7 @@ check(user, 'following');
 check(user, 'private');
 check(user, 'verified');
 check(user, 'connected');
+getall(user);
 
 test('userid', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'id');
@@ -94,4 +101,10 @@ test('connected', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'connected');
 
 	t.is(specialFunc.data, 'null');
+});
+
+test('getAll', async t => {
+	const specialFunc = await specialFunc2.getAll(user, 'getAll');
+
+	t.is(specialFunc.data, specialFunc.data);
 });
