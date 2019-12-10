@@ -4,7 +4,7 @@
   "description": "Basic Instagram Data Scraper from the username, Just to provide the developers the facility to access instagram data using username",
   "main": "index.js",
   "scripts": {
-    "test": "xo --fix && ava"
+    "test": "xo && ava"
   },
   "repository": {
     "type": "git",
