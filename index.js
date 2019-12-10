@@ -54,11 +54,11 @@ module.exports = {
 			const verified = splitData(data, points.verified);
 			const connected = splitData(data, points.connected);
 
-			allData = {id: userId, fullname, username, bio, externalUrl,
-				linkshimmed, posts, followers, following,
-				private: privates, verified, connected};
+			allData = {id: userId, fullname:fullname, username:username, bio:bio, externalUrl:externalUrl,
+				linkshimmed:linkshimmed, posts:posts, followers:followers, following:following,
+				private: privates, verified:verified, connected:connected};
 
-			return {data: unicode(allData)};
+			return {data: allData};
 		}).catch(error => {
 			if (error && error.message === 'Not able to fetch desired result') {
 				return {data: false};
