@@ -282,6 +282,72 @@ module.exports = {
 
 			return {data: error.message};
 		});
+	},
+
+	instaRegular: username => {
+		if (typeof username !== 'string') {
+			throw new TypeError(`Expected a string, got ${typeof username}`);
+		}
+
+		const url = 'https://www.instagram.com/joietribianni/?__a=1';
+
+		return got(url).then(res => {
+			const user = res.body.split('"profile_pic_url":"')[1].split('",')[0] || '';
+			const img = user.replace(/\\u[\dA-Fa-f]{4}/g, '&');
+			return img;
+		}).catch(error => {
+			if (error) {
+				return {
+					error: 'The requested size is currently not available',
+					newerr: error
+				};
+			}
+		});
+	},
+
+	instaHighDefinition: username => {
+		if (typeof username !== 'string') {
+			throw new TypeError(`Expected a string, got ${typeof username}`);
+		}
+
+		const url = 'https://www.instagram.com/joietribianni/?__a=1';
+
+		return got(url).then(res => {
+			const user = res.body.split('"profile_pic_url_hd":"')[1].split('",')[0] || '';
+			const img = user.replace(/\\u[\dA-Fa-f]{4}/g, '&');
+			return img;
+		}).catch(error => {
+			if (error) {
+				return {
+					error: 'The requested size is currently not available',
+					newerr: error
+				};
+			}
+		});
+	},
+
+	instaImage: source => {
+		if (typeof source !== 'string') {
+			throw new TypeError(`Expected a string, got ${typeof source}`);
+		}
+
+		const url = source.split('?')[0];
+
+		return got(`${url}?__a=1`, {json: true}).then(res => {
+			return res.body.graphql.shortcode_media.display_url || '';
+		});
+	},
+
+	instaVideo: source => {
+		if (typeof source !== 'string') {
+			throw new TypeError(`Epxected a string, got ${typeof source}`);
+		}
+
+		const url = source.split('?')[0];
+
+		return got(`${url}?__a=1`, {json: true}).then(res => {
+			return res.body.graphql.shortcode_media.video_url || '';
+		});
 	}
 
 };

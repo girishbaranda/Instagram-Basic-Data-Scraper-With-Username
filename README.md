@@ -130,6 +130,26 @@ instaObj.getAll(user).then(res => {
 ```
 
 
+## Get profile pictures
+
+## Usage for Regular Picture
+```js
+instaObj.instaRegular(user).then(res => {
+  const userRegularImage = res;
+  console.log(userRegularImage);
+  // => "https://instagram.fdel22-1.fna.fbcdn.net/v/t51.2885-19/s150x150/23596544_189408294955120_549593597268197376_n.jpg?_nc_ht=instagram.fdel22-1.fna.fbcdn.net&oh=7fd3e57a8ee68ce98b46be778ed78d95&oe=5E836CF1"
+});
+```
+
+## Usage for HighDefiniton Picture
+```js
+instaObj.instaHighDefination(user).then(res => {
+  const userHDImage = res;
+  console.log(userHDImage);
+  // => "https://instagram.fdel22-1.fna.fbcdn.net/v/t51.2885-19/s150x150/23596544_189408294955120_549593597268197376_n.jpg?_nc_ht=instagram.fdel22-1.fna.fbcdn.net&oh=7fd3e57a8ee68ce98b46be778ed78d95&oe=5E836CF1"
+});
+```
+
 
 
 ## License

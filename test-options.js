@@ -11,12 +11,19 @@ const check = (usr, opt) => {
 	});
 };
 
+const userImage = usr => {
+	return specialFunc2.instaRegular(usr).then(res => {
+		console.log(' Image URL : ' + res + ' \n ');
+	});
+};
+
 const getall = usr => {
 	return specialFunc2.getAll(usr).then(res => {
 		console.log('all Data : ' + JSON.stringify(res.data) + '\n');
 	});
 };
 
+userImage(user);
 check(user, 'id');
 check(user, 'fullname');
 check(user, 'username');
