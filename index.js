@@ -289,7 +289,7 @@ module.exports = {
 			throw new TypeError(`Expected a string, got ${typeof username}`);
 		}
 
-		const url = 'https://www.instagram.com/joietribianni/?__a=1';
+		const url = `https://www.instagram.com/${username}/?__a=1`;
 
 		return got(url).then(res => {
 			const user = res.body.split('"profile_pic_url":"')[1].split('",')[0] || '';
@@ -310,7 +310,7 @@ module.exports = {
 			throw new TypeError(`Expected a string, got ${typeof username}`);
 		}
 
-		const url = 'https://www.instagram.com/joietribianni/?__a=1';
+		const url = `https://www.instagram.com/${username}/?__a=1`;
 
 		return got(url).then(res => {
 			const user = res.body.split('"profile_pic_url_hd":"')[1].split('",')[0] || '';
