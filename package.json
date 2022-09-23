@@ -33,6 +33,7 @@
   "homepage": "https://github.com/girishbaranda/Instagram-Basic-Data-Scraper-With-Username#readme",
   "dependencies": {
     "ava": "^2.4.0",
+    "fs": "^0.0.1-security",
     "got": "^10.0.1",
     "unicode": "^12.1.0",
     "unicodechar-string": "^1.0.0",

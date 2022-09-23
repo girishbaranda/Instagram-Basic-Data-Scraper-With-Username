@@ -125,7 +125,6 @@ module.exports = {
 	getBio: username => {
 		return got(baseLink(username)).then(res => {
 			const data = res.body;
-
 			const skip = points.bio;
 
 			const user = splitData(data, skip);

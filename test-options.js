@@ -3,7 +3,7 @@
 import test from 'ava';
 const specialFunc2 = require('.');
 
-const user = 'glimps.xyz.app';
+const user = 'tech.planner';
 
 const check = (usr, opt) => {
 	return specialFunc2.specificField(usr, opt).then(res => {
@@ -41,19 +41,19 @@ getall(user);
 test('userid', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'id');
 
-	t.is(specialFunc.data, '5502620115');
+	t.is(specialFunc.data, '45481686154');
 });
 
 test('fullname', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'fullname');
 
-	t.is(specialFunc.data, 'GLIMPS.xyz | Seize the day');
+	t.is(specialFunc.data, 'Girish');
 });
 
 test('username', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'username');
 
-	t.is(specialFunc.data, 'glimps.xyz.app');
+	t.is(specialFunc.data, 'tech.planner');
 });
 
 test('bio', async t => {
@@ -65,7 +65,7 @@ test('bio', async t => {
 test('externalUrl', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'externalUrl');
 
-	t.is(specialFunc.data, 'http://onelink.to/8m94d7');
+	t.is(specialFunc.data, 'https://www.techplanner.xyz');
 });
 
 test('linkshimmed', async t => {
@@ -77,7 +77,7 @@ test('linkshimmed', async t => {
 test('posts', async t => {
 	const specialFunc = await specialFunc2.specificField(user, 'posts');
 
-	t.is(specialFunc.data, '86');
+	t.is(specialFunc.data, '12');
 });
 
 test('followers', async t => {
