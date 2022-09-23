@@ -1,5 +1,5 @@
 ## Instagram-Basic-data-Scraper-With-Username
-## This Library is not maintained anymore, and working of this library is paused as instagram has changed the access of data.
+## This repo is not maintained anymore, and working of this library is paused as instagram has changed the access of data.
 
 <p align="center">
 <img src="mime/instagram.jpg" width="340">
